@@ -15,12 +15,12 @@ class Config:
 
 class DevelopConfig(Config):
     DEBUG = True
-    SQLALCHEMY_DATABASE_URI = 'mysql://root:vagrant@localhost/jobs?charset=utf8'
+    SQLALCHEMY_DATABASE_URI = 'mysql://root:root@localhost/jobs?charset=utf8'
 
 
 class TestingConfig(Config):
     TESTING = True
-    SQLALCHEMY_DATABASE_URI = 'mysql://root:vagrant@localhost/jobs?charset=utf8'
+    SQLALCHEMY_DATABASE_URI = 'mysql://root:root@localhost/jobs?charset=utf8'
 
 
 class ProductConfig(Config):
