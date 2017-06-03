@@ -11,6 +11,7 @@ app = Flask(__name__)
 app.config.from_object(config[env])
 config[env].init_app(app)
 db = SQLAlchemy(app)
+db.init_app(app)
 
 from .controllers import upload
 app.register_blueprint(upload)

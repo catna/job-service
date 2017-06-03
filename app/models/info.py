@@ -27,4 +27,14 @@ class CompanyInfo(db.Model):
         self.coid = coid
         self.cohash = str(hash(self.coname))
 
+class CompanyInfoTaskItem(db.Model):
+
+    id = db.Column(db.Integer, primary_key=True)
+    coname = db.Column(db.String(255), nullable=False)
+    status = db.Column(db.Integer, default=0)
+    
+
+    def __init__(self, coname='', status=0):
+        self.coname = coname
+        self.status = status
 
