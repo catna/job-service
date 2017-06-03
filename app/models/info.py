@@ -16,7 +16,7 @@ class CompanyInfo(db.Model):
     coid = db.Column(db.String(255), nullable=True)
     cohash = db.Column(db.String(255), nullable=True)
 
-    def __init__(self, coname, cosize, cotype, vocation, location, description, source, coid):
+    def __init__(self, coname='', cosize='', cotype='', vocation='', location='', description='', source='', coid=''):
         self.coname = coname
         self.cosize = cosize
         self.cotype = cotype

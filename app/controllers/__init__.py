@@ -7,7 +7,7 @@ upload = Blueprint('upload', __name__)
 upload_api = Api(upload)
 
 from company import *
-upload_api.add_resource(CompanyInfoUploader, '/company/info/upload')
+upload_api.add_resource(CompanyInfoUploader, '/company/info')
 
 from home import *
 upload_api.add_resource(Home, '/')
