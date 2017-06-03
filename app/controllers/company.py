@@ -56,26 +56,8 @@ class CompanyInfoTask(Resource):
             task.status = 1
         db.session.commit()
         return keys_dic
-
-    def post(self):
-        '''上传一个爬取任务的结果'''
-        # {
-        #     "id": 1000,
-        #     "ok": 0
-        # }
-        data = request.json
-        if 'id' in data and 'ok' in data:
-            a_task = CompanyInfoTaskItem.query.filter_by(id=data['id']).first()
-            if data['ok'] == 1 and a_task:
-                a_task.status = 2
-            db.session.commit()
-        response = {
-            'code': 0,
-            'mesg': 'ok'
-        }
-        return response
     
-    def put(self):
+    def post(self):
         '''上传task表单'''
         # {
         #     "tasks": [
@@ -101,5 +83,24 @@ class CompanyInfoTask(Resource):
         response['mesg'] = '上传出错'
         return response
         
+class CompanyInfoTaskResult(Resource):
+
+    def post(self):
+        '''上传一个爬取任务的结果'''
+        # {
+        #     "id": 1000,
+        #     "ok": 0
+        # }
+        data = request.json
+        if 'id' in data and 'ok' in data:
+            a_task = CompanyInfoTaskItem.query.filter_by(id=data['id']).first()
+            if data['ok'] == 1 and a_task:
+                a_task.status = 2
+            db.session.commit()
+        response = {
+            'code': 0,
+            'mesg': 'ok'
+        }
+        return response
 
         
