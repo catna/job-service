@@ -5,7 +5,7 @@ from flask import Flask
 from config import config
 from flask_sqlalchemy import SQLAlchemy
 
-env = 'develop'
+env = 'product'
 
 app = Flask(__name__)
 app.config.from_object(config[env])

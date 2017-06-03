@@ -24,7 +24,7 @@ class TestingConfig(Config):
 
 
 class ProductConfig(Config):
-    DEBUG = True
+    DEBUG = False
     SQLALCHEMY_DATABASE_URI = 'mysql://root:root@localhost/jobs?charset=utf8'
 
 config = {
