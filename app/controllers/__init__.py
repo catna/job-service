@@ -8,3 +8,6 @@ upload_api = Api(upload)
 
 from company import *
 upload_api.add_resource(CompanyInfoUploader, '/company/info/upload')
+
+from home import *
+upload_api.add_resource(Home, '/')
